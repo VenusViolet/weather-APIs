@@ -42,3 +42,24 @@ h2 {
     font-size: 100px;
 }
 
+body {
+    line-heights: 1.0;
+}
+
+#five-day-forecast {
+    font-family: "Fantasy", copperplate;
+    font-size: 70px;
+    text-align: center;
+}
+
+#five-day-span {
+    font-family: "Fantasy", copperplate;
+    font-size: 70px;
+    text-align: center;
+    background-color: #0f8fd4;
+    color: white; 
+    padding: 10px;
+    border-radius: 20px;
+    border:  3px solid rgb(234, 238, 21);
+}
+
