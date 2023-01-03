@@ -1,0 +1,17 @@
+p {
+    font-size: 35px;
+    font-family: "Fantasy", copperplate;
+}
+
+#search-button {
+    float: right;
+}
+
+.btn-round {
+    border-radius: 35px;
+}
+
+.bg-pink {
+    background: rgb(237, 100, 207)
+}
+
