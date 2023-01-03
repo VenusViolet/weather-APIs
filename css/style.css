@@ -17,5 +17,15 @@ p {
 
 h1 { 
     font-size: 100px;
-    font-family: 
+    font-family: "Impact" , fantasy;
+}
+
+h2 { 
+    font-size: 40px;
+    font-family: "Impact" , fantasy;
+}
+
+#dashboard-text {
+    color: white;
+    text-align: center;
 }
