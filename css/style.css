@@ -63,3 +63,71 @@ body {
     border:  3px solid rgb(234, 238, 21);
 }
 
+li {
+    color: #0f8fd4; 
+    font-size: 24px;
+}
+
+#five-boxes {
+    padding-left: 160px;
+}
+
+.fiveDayBox {
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    color: white; 
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+#uvSpan {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.h-md-100 {
+    height: 100vh;
+}
+
+@media (max-width: 992px) {
+    #results-city-name {
+        font-size: 45px;
+    }
+    #results-date {
+        font-size: 25px
+    }
+    #five-day-span {
+        font-size: 30px;
+    }
+    #five-boxes {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 636px) {
+    h1 {
+        font-size: 55px;
+    }
+    #results-city-name {
+        font-size: 45px
+    }
+    li  {
+        font-size: 15px;
+    }
+    .h-md-100 {
+        height: 65vh;
+    }
+}
+
+@media (max-width: 400px) {
+    #results-date {
+        position: static;
+    }
+    .h-md-100 {
+        height: 35vh;
+    }
+}
