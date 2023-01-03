@@ -10,6 +10,8 @@
           font-family: "Sofia", sans-serif;
         }
         </style>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+          <link rel='stylesheet' href='css/style.css' />
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark justify-content-center text center">
@@ -27,11 +29,40 @@
                             placeholder="Enter a city name...">
                             <button id="search-button" class="input-group-addon">Search</button>
                         </div>
+                        <hr /><br>
+                        <ul id="search-results" class="list-group"></ul>
                     </div>
                 </div>
             </div>
+            <div class="col-md-9 p-0 bg-white h-md-100 ">
+                <div class="d-md-flex align-items-center h-md-0 pl-5" id="results-display">
+                    <div class="logoarea pt-2 pb-1">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p id="results-city-name"></p>
+                            </div>
+                            <img id="results-icon"></img><br>
+                            <div class="col-xs-6">
+                                <p id="results-data"></p>
+                            </div>
+                        </div>
+                        <p id="reults-temperature"></p><br>
+                        <p id="reults-humidity"></p><br>
+                        <p id="reults-wind-speed"></p><br>
+                        <p id="reults-uv-index">UV Index: <span id="uvSpan"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <p id="five-day-forecast" class="pl-5"><span id="five-day-span">Five Day Forecast</span></p>
+                </div>
+                <div class="row" id="five-boxes"></div>
+            </div>
 
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="js/logic.js"> </script>
 
     </body>
 </html>
