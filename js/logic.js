@@ -75,9 +75,25 @@ function searchACity(cityName) {
             document.querySelector("#search-results").innerHTML = "";
         }
     })
-    .then(function (response) {
+    .then(function (response) { //should i add more spaces? I kinda like this neat look but i am not too sure if that is okay in industry
         let currentWeatherIcon = response.weather[0].icon;
         let picUrl = "https://img.favpng.com/11/17/11/cloud-weather-rain-illustration-png-favpng-DJmSjCNPBEmDZqgvMHMWMAnek.jpg" + currentWeatherIcon + "@2x.png";
-        
-    })
+        document.querySelector("#results-city-name").textContent = response.name;
+        document.querySelector("#results-temperature").textContent = "Temperature: " +
+        kelvinToFarenheit(parseFloat(response.main.temp)).toFixed(1) + "°F";
+        document.querySelector("#results-humidity").textContent = "Humidity: " + response.main.humidity + "%";
+        document.querySelector("#results-wind-speed").textContent = "Wind Speed: " + response.wind.speed + " MPH";
+        document.querySelecotr("#results-date").textContent = "\xa0\xa0(" + currentDate + ")";
+        $("#results-icon").attr("srs", picUrl);
+        uvSearch(response.coord.lat, response.coord.lon);
+        fiveDayForecast(response.name);
+        searchHistory.push(cityName);
+        if (searchHistory.lengtj >= 9) {
+            searchHistory.shift();
+        }
+        searchHistory.slice().reverse().forEach(function (name) {
+            let listItem = $('<li>').text(name).addClass("list-group-item");
+            $('#search-results').append(listItem);
+        });
+    });
 }
