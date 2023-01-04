@@ -26,3 +26,20 @@ function getLocation() {
     };
 
 };
+
+function showPosition(position) {
+    if (navigator.geolocation) {
+        userLaat = postion.coords.latitude;
+        userLong = position.coords.longitude;
+    } else {
+        userLat = 19.7216;
+        userLong = 155.0849;
+    } 
+    $.ajax({
+        url: myurl + weatherCall + apiKey + "&lat=" + userLat.toFixed(4) + "&lon=" + userLong.toFixed(4),
+        method: "GET",
+    }).then(function (r) {
+        searchACity(r.name);
+    });
+
+}
