@@ -58,3 +58,26 @@ function letsGo() {
     }
 }
 
+function kelvinToFarenheit(kelvin) {
+    return (kelvin - 273.15) * 1.8 + 32;
+}
+
+function searchACity(cityName) {
+    $('#five-boxes').html("");
+    fiveDayArray = [];
+    $.ajax({
+        url: myurl + weatherCall + apiKey + "&q=" + cityName,
+        method: "GET",
+        error: function () {
+            console.log('sorry, this city can not be found');
+        },
+        success: function () {
+            document.querySelector("#search-results").innerHTML = "";
+        }
+    })
+    .then(function (response) {
+        let currentWeatherIcon = response.weather[0].icon;
+        let picUrl = "https://img.favpng.com/11/17/11/cloud-weather-rain-illustration-png-favpng-DJmSjCNPBEmDZqgvMHMWMAnek.jpg" + currentWeatherIcon + "@2x.png";
+        
+    })
+}
