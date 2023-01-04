@@ -112,3 +112,37 @@ function searchACity(cityName) {
         });
     };
 }
+
+function fiveDayForecast(cityName) {
+    let numberOfDays = 1;
+    $.ajax({
+        url: myurl + forecast + apiKey + "&q=" + cityName,
+        method: "GET"
+    }
+    ).then(function (response) {
+        let hottestTemp = 0;
+        response.list.forEach(function (i) {
+            let iteratedDate = moment(i.dt_text).format("MM/DD/YYYY");
+            let checkDate = moment().add(numberOfDays, 'days').format("MM/DD/YYYY");
+            if (checkDate === iteratedDate & numberOfDays < 6 ) {
+                response.list.ForEach(function (x) {
+                    let iteratedDate2 = moment(x.dt_txt).format("MM/DD/YYYY");
+                    if (checkDate === iteratedDate2 && x.main.temp_max > hottestTemp) {
+                        topIcon = x.weather[0].icon;
+                        hottestTemp = x.main.temp_max;
+                        topHumidity = x.main.humidity;
+                    }
+                });
+                fiveDayArray.push({
+                    date: iteratedDate,
+                    icon: topIcon,
+                    temp_max: hottestTemp,
+                    humidity: topHumidity
+                });
+                numberOfDays++;
+            };
+            hottestTemp = 0;
+        });
+        buildFiveBoxes(fiveDayArray);
+    });
+};
