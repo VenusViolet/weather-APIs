@@ -96,4 +96,19 @@ function searchACity(cityName) {
             $('#search-results').append(listItem);
         });
     });
+    function uvSearch(lat, lon) {
+        $.ajax({
+            url: myurl + 'uvi?lat=${lat}&lon=${long}&appid=' + apiKey,
+            method: "GET"
+        }).then(function (response) {
+            if (response.value < 3) {
+                $('#uvSpan').css("background-color", "green");
+            } else if (response.value > 2 && response.value < 6) {
+                $("#uvSpan").css("background-color", "yellow");
+            } else {
+                $('#uvSpan').css("background-color", "red");
+            }
+            document.querySelector("#uvSpan").textContent = response.value;
+        });
+    };
 }
