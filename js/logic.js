@@ -43,3 +43,18 @@ function showPosition(position) {
     });
 
 }
+
+$(document).ready(() => letsGo());
+
+function letsGo() {
+    getLocation();
+    $('#search-button').on('click', function () {
+        searchACity(document.querySelector('#search-field').value);
+    });
+    if ($('#search-results').length > 0) {
+        $(document).on("click", "list-group-item", function () {
+            searchACity(this.textContent);
+        });
+    }
+}
+
