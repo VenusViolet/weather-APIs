@@ -146,3 +146,23 @@ function fiveDayForecast(cityName) {
         buildFiveBoxes(fiveDayArray);
     });
 };
+
+function buildFiveBoxes(box) {
+    box.ForEach(function (index) {
+        let newBox = $("<div");
+        newBox.addClass("fiveDayBox");
+        newBox.text(index.date);
+
+        let picUrl = "https://img.favpng.com/11/17/11/cloud-weather-rain-illustration-png-favpng-DJmSjCNPBEmDZqgvMHMWMAnek.jpg" + index.icon + "@2x.png";
+        let newPic = $("<img>").attr("src", picUrl).attr("alt", "weather icon");
+        newBox.append(newPic);
+
+        let tempSpan = $("<span>").text(kelvinToFarenheit(index.temp_max).toFixed(2) + "°F").css("text-align", "center").css("font-size", "40px").css("padding-bottom", "10px");
+        newBox.append(tempSpan);
+
+        let humiditySpan = $("<span>").text("Humidity: " + index.humidity + "%").css("text-align", "center");
+        newBox.append("<br>");
+        newBox.append(humiditySpan);
+        $("#five-boxes").append(newBox);
+    });
+}
