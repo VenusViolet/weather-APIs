@@ -1,3 +1,4 @@
+// identifying apikey, myurl , etc. 
 const apiKey = "bdd4e019d62c00a0511377ab955c322a";
 const myurl = "https://api.openweathermap.org/data/2.5/";
 const forecast = "forecast?appid=";
@@ -7,12 +8,14 @@ const currentDate = moment().format('MM/DD/YYYY');
 let searchHistory = [];
 let fiveDayArray = [];
 
+//Geolocation for the browser, but for YOUR location
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, handle_error);
 
     };
-    function handle_error(err) {
+    // if an error is faced, then it will go back to Hilo, Hawaii as the beginning location. 
+    function handle_error(err) { 
         if(err.code == 1) {
             userLat = 19.7216;
             userLong = 155.0849;
@@ -26,7 +29,7 @@ function getLocation() {
     };
 
 };
-
+//the function that will show our position 
 function showPosition(position) {
     if (navigator.geolocation) {
         userLat = position.coords.latitude;
@@ -43,9 +46,9 @@ function showPosition(position) {
     });
 
 }
-
+//adding the event listeners
 $(document).ready(() => letsGo());
-
+//event listener for search button 
 function letsGo() {
     getLocation();
     $('#search-button').on('click', function () {
@@ -69,13 +72,14 @@ function searchACity(cityName) {
         url: myurl + weatherCall + apiKey + "&q=" + cityName,
         method: "GET",
         error: function () {
+            //error message incase the city does not exist, there is a response
             console.log('sorry, this city can not be found');
         },
         success: function () {
             document.querySelector("#search-results").innerHTML = "";
         }
     })
-    .then(function (response) { //should i add more spaces? I kinda like this neat look but i am not too sure if that is okay in industry
+    .then(function (response) { //should i add more spaces? I kinda like this neat look but i am not too sure if that is okay? also this next section was supposed to displsy the weather icons but i had a bit of trouble with it so i would appreciate any comment on how i could fix that
         let currentWeatherIcon = response.weather[0].icon;
         let picUrl = "https://img.favpng.com/11/17/11/cloud-weather-rain-illustration-png-favpng-DJmSjCNPBEmDZqgvMHMWMAnek.jpg" + currentWeatherIcon + "@2x.png";
         document.querySelector("#results-city-name").textContent = response.name;
@@ -121,6 +125,7 @@ function fiveDayForecast(cityName) {
     }
     ).then(function (response) {
         let hottestTemp = 0;
+        //formatting so that the date will be displayed correctly 
         response.list.forEach(function (i) {
             let iteratedDate = moment(i.dt_text).format("MM/DD/YYYY");
             let checkDate = moment().add(numberOfDays, 'days').format("MM/DD/YYYY");
@@ -146,7 +151,7 @@ function fiveDayForecast(cityName) {
         buildFiveBoxes(fiveDayArray);
     });
 };
-
+//extra formatting
 function buildFiveBoxes(box) {
     box.forEach(function (index) {
         let newBox = $("<div");
