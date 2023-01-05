@@ -18,7 +18,7 @@ To access the webpage, you can visit the deployed webpage URL or follow the link
 This personal calendar can be used to schedult your daily plans right down to the hour. It is very clear with the hours laid out and is also color coded!
 <img width="1440" alt="Screenshot 2023-01-04 at 6 03 01 PM" src="https://user-images.githubusercontent.com/115984242/210699411-97a6a955-7905-4ded-8227-98c25f6f5cba.png">
 
-Link to deployed website: file:///Users/venusrodin/weather-APIs/index.html 
+Link to deployed website: https://venusviolet.github.io/weather-APIs/ 
 
 ## Credits 
 My boss Dante Orpilla helped by going through my code alongside me and double checking it. Elijah Ching also collaborated with the Java Script file. 
