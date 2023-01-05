@@ -2,7 +2,7 @@ const apiKey = "bdd4e019d62c00a0511377ab955c322a";
 const myurl = "https://api.openweathermap.org/data/2.5/";
 const forecast = "forecast?appid=";
 const weatherCall = "weather?appid=";
-const currentDate = moment().format('MM/DD?YYYY');
+const currentDate = moment().format('MM/DD/YYYY');
 
 let searchHistory = [];
 let fiveDayArray = [];
@@ -29,7 +29,7 @@ function getLocation() {
 
 function showPosition(position) {
     if (navigator.geolocation) {
-        userLaat = postion.coords.latitude;
+        userLat = position.coords.latitude;
         userLong = position.coords.longitude;
     } else {
         userLat = 19.7216;
@@ -83,7 +83,7 @@ function searchACity(cityName) {
         kelvinToFarenheit(parseFloat(response.main.temp)).toFixed(1) + "°F";
         document.querySelector("#results-humidity").textContent = "Humidity: " + response.main.humidity + "%";
         document.querySelector("#results-wind-speed").textContent = "Wind Speed: " + response.wind.speed + " MPH";
-        document.querySelecotr("#results-date").textContent = "\xa0\xa0(" + currentDate + ")";
+        document.querySelector("#results-data").textContent = "\xa0\xa0(" + currentDate + ")";
         $("#results-icon").attr("srs", picUrl);
         uvSearch(response.coord.lat, response.coord.lon);
         fiveDayForecast(response.name);
@@ -98,7 +98,7 @@ function searchACity(cityName) {
     });
     function uvSearch(lat, lon) {
         $.ajax({
-            url: myurl + 'uvi?lat=${lat}&lon=${long}&appid=' + apiKey,
+            url: myurl + `uvi?lat=${lat}&lon=${lon}&appid=` + apiKey,
             method: "GET"
         }).then(function (response) {
             if (response.value < 3) {
@@ -148,7 +148,7 @@ function fiveDayForecast(cityName) {
 };
 
 function buildFiveBoxes(box) {
-    box.ForEach(function (index) {
+    box.forEach(function (index) {
         let newBox = $("<div");
         newBox.addClass("fiveDayBox");
         newBox.text(index.date);
