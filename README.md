@@ -16,7 +16,7 @@ To access the webpage, you can visit the deployed webpage URL or follow the link
 
 ## Usage
 This webpage can be used to track the temperature, humidity, wind speed, and uv index for any city in the United States. Everything is laid out in a simple way so that any confusion is not created. 
-<img width="1440" alt="Screenshot 2023-01-04 at 6 03 01 PM" src="https://user-images.githubusercontent.com/115984242/210699411-97a6a955-7905-4ded-8227-98c25f6f5cba.png">
+<img width="1440" alt="Screenshot 2023-01-04 at 6 16 13 PM" src="https://user-images.githubusercontent.com/115984242/210700649-f833f60f-2025-4e61-91c2-d911856c4614.png">
 
 Link to deployed website: https://venusviolet.github.io/weather-APIs/ 
 
