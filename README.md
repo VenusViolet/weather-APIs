@@ -1,7 +1,7 @@
 # Module 6
 
 ## Description 
-Sometimes it can be very difficult to keep track of your daily agenda. This calendar can be very helpful and keep you on track. It is color coded to help identify past, present, and future tasks. It ranges from 9am - 5pm so that it can mimick a work schedule. Everything is also stored into your local storage, even when the webpage is deleted. 
+This webpage can be used to discover the weather for any city in the United States. It also displays the forecast for up to five days, as well as your current locations info. Specifically, the temperature, humidity, wind speed, uv index, and current date is displayed. This is a wonderful display of weather apis and geographical apis. 
 
 ## Table of Contents
 1. Description
@@ -15,13 +15,13 @@ Sometimes it can be very difficult to keep track of your daily agenda. This cale
 To access the webpage, you can visit the deployed webpage URL or follow the link of the Github repository. 
 
 ## Usage
-This personal calendar can be used to schedult your daily plans right down to the hour. It is very clear with the hours laid out and is also color coded!
+This webpage can be used to track the temperature, humidity, wind speed, and uv index for any city in the United States. Everything is laid out in a simple way so that any confusion is not created. 
 <img width="1440" alt="Screenshot 2023-01-04 at 6 03 01 PM" src="https://user-images.githubusercontent.com/115984242/210699411-97a6a955-7905-4ded-8227-98c25f6f5cba.png">
 
 Link to deployed website: https://venusviolet.github.io/weather-APIs/ 
 
 ## Credits 
-My boss Dante Orpilla helped by going through my code alongside me and double checking it. Elijah Ching also collaborated with the Java Script file. 
+Dante Orpilla, Elijah Ching, Brooks Kaniho, Makoa Aurello, and TA Cabral all helped me out with understanding what functions to use, how to style the webpage, and directed me throughout the project. I espically appreiate Cabral for helping me understand the errors I was recieving in the console.
 
 
 ## Licence 
